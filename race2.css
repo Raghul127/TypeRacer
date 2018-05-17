@@ -1,0 +1,36 @@
+html
+{  font-size: 20px; 
+  font-family: 'Open Sans', sans-serif;
+  background-image: url("imag5.jpg") ;
+  background-size: 1200px 1200px;
+}
+
+body {
+  width: 800px;
+  height: 665px;
+  margin: 0 auto;
+  padding: 0 20px 20px 20px;
+  border: 5px solid black;
+}
+
+#green {
+    color:green;
+    background: rgba(0,255,0,0.4);
+    font-family: serif;
+    font-size: x-large;
+
+}
+
+#red {
+    color:red;
+    background: rgba(255,0,0,0.4);
+    font-family: serif;
+	font-size: x-large;
+   
+}
+
+#black {
+    color:black;
+    font-family: serif;
+	font-size: x-large;
+}
