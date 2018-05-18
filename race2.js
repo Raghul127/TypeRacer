@@ -21,42 +21,42 @@ b.textContent=black;
 typed.addEventListener('keydown',function(e)
 {
 
-if(!timer)
-{
+  if(!timer)
+  {
   startTimer = new Date();
 	timer++;
-}
-if(e.key == 'CapsLock' || e.key == 'Shift')
-{
+  }
+  if(e.key == 'CapsLock' || e.key == 'Shift')
+  {
   e.preventDefault();
-}
-else
-{ 
+  }
+  else
+  { 
 
   //Three possible cases
 
-  if(backspace && e.key!='Backspace' )
+    if(backspace && e.key!='Backspace' )
     {
       if(e.key==text[i] )
-  	  {
+       {
         green+=text[i];
         black=black.slice(1,l);
         g.textContent=green;
         b.textContent=black;
-		    backspace=1;
+	backspace=1;
         i++;
 
-          if(i==text.length)
-          {
-        	  document.getElementById("type-area").disabled = true;
-		  endTimer = new Date();
-        	  const timeTaken = (endTimer.getTime() - startTimer.getTime()) / 1000;
-        	  const speed= text.length/timeTaken;
-            var sp=speed.toFixed(2);
-            result.innerHTML= sp; 
-          }
-	    }
-     else
+       if(i==text.length)
+       {
+        document.getElementById("type-area").disabled = true;
+	endTimer = new Date();
+        const timeTaken = (endTimer.getTime() - startTimer.getTime()) / 1000;
+        const speed= text.length/timeTaken;
+        var sp=speed.toFixed(2);
+        result.innerHTML= sp; 
+        }
+    }
+    else
     {
     backspace=0;
     black=black.slice(1,l);
@@ -66,21 +66,20 @@ else
     }
   }
   else
+  {
+   if(e.key=='Backspace' && backspace==0)
+   {
+      backspace=1;
+      black=red+black;
+      red="";
+      r.textContent=red;
+      b.textContent=black;
+    }
+    else 
     {
-	    if(e.key=='Backspace' && backspace==0)
-	      {
-      		backspace=1;
-          black=red+black;
-          red="";
-          r.textContent=red;
-      		b.textContent=black;
-	      }
-    	else 
-	      {
-		      e.preventDefault();
-	      }
-	  }
+       e.preventDefault();
+    }
+  }
 }
 
-}
-)})
+})})
