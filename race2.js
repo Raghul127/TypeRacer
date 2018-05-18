@@ -48,7 +48,8 @@ else
 
           if(i==text.length)
           {
-        	  endTimer = new Date();
+        	  document.getElementById("type-area").disabled = true;
+		  endTimer = new Date();
         	  const timeTaken = (endTimer.getTime() - startTimer.getTime()) / 1000;
         	  const speed= text.length/timeTaken;
             var sp=speed.toFixed(2);
